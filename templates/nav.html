@@ -1,0 +1,133 @@
+<style>
+
+a {
+    color: black;
+    text-decoration: none;
+    font-family: Neutron;
+    margin-right: 1vw;
+    font-size: 150%;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+ul:hover {
+    overflow: visible;
+}
+li {
+    position: relative;
+    float: left;
+    background-color: #ffffff;
+    margin-top: 0;
+    list-style: none;
+  
+}
+li::after {
+    content:"";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 2px;
+    
+    background: #000000;
+    
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease;
+}
+li:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+    
+    box-shadow: 0px 4px 5px 2px rgba(0,0,0,.1);
+}
+.navbar li:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+    
+    box-shadow: 0px 4px 5px 2px rgba(0,0,0,.1);
+}
+
+/* second level */
+
+ul ul {
+    max-height: 0;
+    transition: max-height 1s;
+    position: absolute;
+}
+ul li:hover ul {
+    max-height: 999px;
+  
+}
+ul ul li {
+    float: none;
+    background-color: #ffffff;
+    min-width: max-content;
+    font-size: 90%;
+}
+ul ul li:hover {
+    background-color: #ffffff;
+    font-size: 90%;
+}
+
+/* third level */
+
+ul ul ul {
+    position: absolute;
+    width: 0;
+    top: 0;
+    left: 100%;
+    transition: width 0.5s;
+}
+ul ul li:hover ul {
+    width: 100%;
+}
+ul ul ul li {
+    background-color: #ffffff;
+}
+ul ul ul li:hover {
+    background-color: #ffffff;
+}
+</style>
+
+<nav class="navbar fixed-top" style="background-color: #ffffff;">
+  <div style="background-color: #ffffff; width: 100%; margin-right: 1vw;">
+    <a href="/" style="background-color: #ffffff;">
+      <img src="https://pbs.twimg.com/media/F5GGXdpWcAAmePt?format=webp&name=small" alt="Logo" width="19%" height="auto" style="float: right;">
+    </a>
+  </div>
+  <ul class="navbar col align-self-center" style="background-color: #ffffff; margin: 1vw 10vw 1vw 10vw; ">
+    <li><a href="/">Inicio</a></li>
+    <li><a href="/">Nosotros</a></li>
+    <li><a href="/">Revista</a></li>
+    <li><a href="/" class="dropdown-toggle">Posts</a>
+        <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">TikTok</a></li>
+        </ul>
+    </li>
+    <li><a href="/" class="dropdown-toggle">Artículos</a>
+        <ul>
+            <li><a href="#">Medicina</a></li>
+            <li><a href="#">Tecnología</a></li>
+            <li><a href="#">Física</a></li>
+            <li><a href="#">Biología</a></li>
+            <li><a href="#" style="font-size: 200%;">...</a>
+                <ul>
+                    <li><a href="#">OPTIONS</a></li>
+                    <li><a href="#">OPTIONS</a></li>
+                    <li><a href="#">OPTIONS</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a href="/">Convocatorias</a></li>
+    <li><a href="/">Eventos</a></li>
+  </ul>
+</nav>
+<div style="height: 65px;"></div>

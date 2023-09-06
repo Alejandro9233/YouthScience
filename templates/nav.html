@@ -7,16 +7,16 @@ a {
     margin-right: 1vw;
     font-size: 150%;
 }
-ul {
+.navbar ul {
     margin: 0;
     padding: 0;
     list-style: none;
     overflow: hidden;
 }
-ul:hover {
+.navbar ul:hover {
     overflow: visible;
 }
-li {
+.navbar li {
     position: relative;
     float: left;
     background-color: #ffffff;
@@ -24,7 +24,7 @@ li {
     list-style: none;
   
 }
-li::after {
+.navbar li::after {
     content:"";
     position: absolute;
     bottom: 0;
@@ -39,7 +39,7 @@ li::after {
     transform-origin: right;
     transition: transform 250ms ease;
 }
-li:hover::after {
+.navbar li:hover::after {
     transform: scaleX(1);
     transform-origin: left;
     
@@ -54,42 +54,42 @@ li:hover::after {
 
 /* second level */
 
-ul ul {
+.navbar ul ul {
     max-height: 0;
     transition: max-height 1s;
 position: absolute;
 }
-ul li:hover ul {
+.navbar ul li:hover ul {
     max-height: 999px;
 
 }
-ul ul li {
+.navbar ul ul li {
     float: none;
     background-color: #ffffff;
     min-width: max-content;
     font-size: 90%;
 }
-ul ul li:hover {
+.navbar ul ul li:hover {
     background-color: #ffffff;
     font-size: 90%;
 }
 
 /* third level */
 
-ul ul ul {
+.navbar ul ul ul {
     position: absolute;
 width: 0;
   top: 0;
 left: 100%;
   transition: width 0.5s;
   }
-ul ul li:hover ul {
+.navbar ul ul li:hover ul {
     width: 100%;
 }
-ul ul ul li {
+.navbar ul ul ul li {
     background-color: #ffffff;
 }
-ul ul ul li:hover {
+.navbar ul ul ul li:hover {
     background-color: #ffffff;
 }
 </style>

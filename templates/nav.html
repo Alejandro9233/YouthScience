@@ -1,7 +1,7 @@
 <style>
 
 a {
-    color: black;
+    color: #000000;
     text-decoration: none;
     font-family: Neutron;
     margin-right: 1vw;
@@ -43,13 +43,13 @@ li:hover::after {
     transform: scaleX(1);
     transform-origin: left;
     
-    box-shadow: 0px 4px 5px 2px rgba(0,0,0,.1);
+    box-shadow: 0px 4px 5px 2px #0000001a;
 }
 .navbar li:hover::after {
     transform: scaleX(1);
     transform-origin: left;
     
-    box-shadow: 0px 4px 5px 2px rgba(0,0,0,.1);
+    box-shadow: 0px 4px 5px 2px #0000001a;
 }
 
 /* second level */
@@ -108,7 +108,7 @@ ul ul ul li:hover {
         <ul>
             <li><a href="#">Instagram</a></li>
             <li><a href="#">Facebook</a></li>
-            <li><a href="#">TikTok</a></li>
+            <li style="border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;"><a href="#">TikTok</a></li>
         </ul>
     </li>
     <li><a href="/" class="dropdown-toggle">Artículos</a>
@@ -117,11 +117,11 @@ ul ul ul li:hover {
             <li><a href="#">Tecnología</a></li>
             <li><a href="#">Física</a></li>
             <li><a href="#">Biología</a></li>
-            <li><a href="#" style="font-size: 200%;">...</a>
+            <li style="border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;"><a href="#" style="font-size: 200%;">...</a>
                 <ul>
+                    <li style="border-top-right-radius: 5px;"><a href="#">OPTIONS</a></li>
                     <li><a href="#">OPTIONS</a></li>
-                    <li><a href="#">OPTIONS</a></li>
-                    <li><a href="#">OPTIONS</a></li>
+                    <li style="border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;"><a href="#">OPTIONS</a></li>
                 </ul>
             </li>
         </ul>

@@ -5,11 +5,13 @@ app = Flask(__name__)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("home.html")
+    areas = {1,2,3,4,5,6}
+    return render_template("home.html", areas = areas)
 
 @app.route("/nosotros")
 def us():
-    return render_template("nosotros.html")
+    areas = {1,2,3,4,5,6}
+    return render_template("nosotros.html", areas = areas)
 
 
 if __name__ == '__main__':

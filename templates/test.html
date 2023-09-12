@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="border: solid red 1px; width: 80; height: 1000px; justify-content: ce;">
+        <img alt="img" id="unsplashImage">
+    </div>
+</body>
+<script>
+  var url = "https://graph.instagram.com/me/media";
+  var fields = "?fields=media_type,media_url,caption,permalink&access_token=";
+  var access_token = "IGQWROU3ZAFclhBWi1rdC1iajB3UHY5ZAThDMnl4WTR4N2c5LUlpRE15OE5peENEN09NVl9mNXYxTmhWUjNKNHBxMm9DUF9VOFJZAS1hYcFNmOGtSQmJGT3VSYmp0c256OUdzVVdISkhVXzdBVnNOcjRkby03VWdFVXMZD";
+
+  var urlFetch = url + fields + access_token;
+ 
+
+  fetch(urlFetch)
+    .catch((error) => console.error(error))
+    .then((response) => response.json())
+    .then((arrayData) => function1(arrayData));
+
+  let function1 = (arrayData) => {
+    let html = "";
+    arrayData.data.map((itemArray) => function2(itemArray));
+
+    function function2(itemArray2) {
+      let htmlDemo1 = "";
+      htmlDemo1 += `<img src="${itemArray2.media_url}">`;
+      htmlDemo1 += `
+            <a class="icon-instagram" href="${itemArray2.permalink}" target="_blank" rel="noopener noreferrer">
+            </a>
+            `;
+
+      if (itemArray2.media_type === "IMAGE") {
+        let item_caption = itemArray2.caption;
+        function funcCaption() {
+          // ========== url... ==========
+          if (item_caption) {
+            const urlRegex = /(https?:\/\/[^\s]+)/g;
+            // Find all matches
+            const urlMatches = item_caption.match(urlRegex);
+
+            htmlDemo1 += `
+                <a class="icon-shopping-cart" href="${urlMatches[0]}" target="_blank" rel="noopener noreferrer">
+                </a>
+                `;
+
+            //   console.log(urlMatches[2]);
+            // ========== url. ==========
+            // ========== hashtag... ==========
+
+            // Regular expression to match hashtags
+            const hashtagRegex = /#(\w+)/g;
+            // Find all matches
+            const hashMatches = item_caption.match(hashtagRegex);
+            // Log each extracted hashtag separately
+            hashMatches.forEach((match) => {
+              const matchSlice = match.slice(1);
+            });
+
+            const lines = item_caption.split("\n");
+            const title = lines[0];
+
+            // Output: "Title rhinoceros"
+            console.log(title);
+            htmlDemo1 += `
+                <p class="title">${title}</P>
+                `;
+
+            // ========== title. ==========
+            // ========== content... ==========
+
+            // Remove the link
+            const linkRemoved = item_caption.replace(/https?:\/\/\S+/g, "");
+
+            // Remove the hashtag
+            const hashtagRemoved = linkRemoved.replace(/#\S+/g, "");
+
+            // console.log(hashtagRemoved);
+            // ========== content. ==========
+          }
+        }
+        funcCaption();
+        // html += `
+        // <p>${item_caption}</p>
+        // `;
+        let aside = document.createElement("aside");
+        aside.innerHTML = htmlDemo1;
+        aside.classList.add("imgContainer"); // Add the class to the aside element
+        let mainContainer = document.querySelector(".mainContainer");
+        mainContainer.insertAdjacentHTML("beforeend", aside.outerHTML);
+      }
+    }
+    // mainContainer.insertAdjacentHTML("beforeend", html);
+  };
+    
+</script>
+</html>

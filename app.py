@@ -3,7 +3,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route("/")
-@app.route("/home")
+@app.route("/inicio")
 def home():
     areas = {1,2,3,4,5,6}
     return render_template("home.html", areas = areas)
@@ -12,6 +12,10 @@ def home():
 def us():
     areas = {1,2,3,4,5,6}
     return render_template("nosotros.html", areas = areas)
+
+@app.route("/revista")
+def magazine():
+    return render_template('revista.html')
 
 @app.route("/test")
 def a():

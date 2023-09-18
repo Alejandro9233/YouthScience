@@ -24,15 +24,104 @@
     .space{
         border: solid red 1px;
     }
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(8, 5vw);
+        grid-gap: 1.5rem; 
+    }
+    .gallery__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block; 
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+    }
+    .gallery__img:hover {
+        transform: scale(1.1);
+    }
+    .gallery__img__little:hover {
+        transform: scale(1.2);
+    }
+    #magazine_item_1{
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 5;
+    }
+    #magazine_item_2{
+        grid-column-start: 5;
+        grid-column-end: 7;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    #magazine_item_3{
+        grid-column-start: 7;
+        grid-column-end: 9;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    #magazine_item_4{
+        grid-column-start: 5;
+        grid-column-end: 7;
+        grid-row-start: 3;
+        grid-row-end: 5;
+    }
+    #magazine_item_5{
+        grid-column-start: 7;
+        grid-column-end: 9;
+        grid-row-start: 3;
+        grid-row-end: 5;
+    }
     .row li {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
         list-style-type: none;
-        margin-left: 1em;
         position: relative;
         font-size: small;
     }
     .row li a:hover {
-        color: #00ffea62;
+        color: #ff0000;
     }
+    .publicaciones:hover {
+        font-size: x-large;
+    }
+    .row li a:focus{
+        outline: none;
+        color: #ff0000;
+    }
+    .row li a:active{
+        color: #f700ff;
+    }
+    .bluedot{
+        margin-right: 2%;
+        border-radius: 100%;
+        border: solid 1px #8080806c;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+    }
+    .bluedot:hover, .bluedot.clicked{
+        background-color: #ff0000;
+    }
+    .bluedot:active {
+        background-color: #f700ff;
+    }
+    .sendButton {
+        border: solid 1px #e4e4e4;
+        border-radius: 5px;
+        background-color: transparent;
+        width: max-content;
+        transition: all 0.3s ease-in-out;
+    }
+    .sendButton:hover{
+        background-color: #ff0000;
+        
+    }
+
   
 </style>
 <body style="background-color: #ffffff;">
@@ -43,9 +132,9 @@
                 <div class="row">
                     <h1 class="space">Revista</h1>
                     <div class="space" style="width: 100%; margin: 25% 0 25% 0;">
-                        <ul class="space">
+                        <ul class="space" style="float: right;">
                             <span>Publicaciones disponibles:</span>
-                            <div class="row"><li><a href="#">Unknow</a></li></div>
+                            <div class="row publicaciones"><li><a href="#">Unknow</a></li></div>
                             <div class="row"><li><a href="#">Unknow</a></li></div>
                             <div class="row"><li><a href="#">Unknow</a></li></div>
                             <div class="row"><li><a href="#">Unknow</a></li></div>
@@ -62,20 +151,54 @@
             </div>
             <div class="space" style="width: 80%; margin-top: 5%;">
                 <div class="row space">
-                    <div class="space" style="width: 50%;">
-                        <img src="" alt="nada">
+                    <div class="space gallery" style="width: 50%;">
+                        <div class="space" id="magazine_item_1">
+                            <a href="#">
+                                <img class="gallery__img" src="https://pbs.twimg.com/media/F5SAlVuWwAAx9y4?format=png&name=large" alt="magazine 1">
+                            </a>
+                        </div>
+                        <div class="space" id="magazine_item_2">
+                            <a href="#">
+                                <img class="gallery__img gallery__img__little" src="https://pbs.twimg.com/media/F5SAlVuWwAAx9y4?format=png&name=large" alt="magazine 1">
+                            </a>
+                        </div>
+                        <div class="space" id="magazine_item_3">
+                            <a href="#">
+                                <img class="gallery__img gallery__img__little" src="https://pbs.twimg.com/media/F5SAlVuWwAAx9y4?format=png&name=large" alt="magazine 1">
+                            </a>
+                        </div>
+                        <div class="space" id="magazine_item_4">
+                            <a href="#">
+                                <img class="gallery__img gallery__img__little" src="https://pbs.twimg.com/media/F5SAlVuWwAAx9y4?format=png&name=large" alt="magazine 1">
+                            </a>
+                        </div>
+                        <div class="space" id="magazine_item_5">
+                            <a href="#">
+                                <img class="gallery__img gallery__img__little" src="https://pbs.twimg.com/media/F5SAlVuWwAAx9y4?format=png&name=large" alt="magazine 1">
+                            </a>
+                        </div>
                     </div>
                     <div class="space" style="width: 50%;">
                         <h1 class="space" style="text-align: center;">Pregunta...</h1>
                         <div class="space" style="width: 100%; margin: 15% 0 0 15%;">
-                            <ul class="space">
-                                <div class="row"><li><a href="#">Option 1</a></li></div>
-                                <div class="row"><li><a href="#">Option 2</a></li></div>
-                                <div class="row"><li><a href="#">Option 3</a></li></div>
-                                <div class="row"><li><a href="#">Option 4</a></li></div>
+                            <ul class="space" style="width: 100%;">
+                                <div class="row"><li><a href="#">
+                                    <div class="bluedot"></div>Option 1
+                                </a></li></div>
+                                <div class="row"><li><a href="#">
+                                    <div class="bluedot"></div>Option 2
+                                </a></li></div>
+                                <div class="row"><li><a href="#">
+                                    <div class="bluedot"></div>Option 3
+                                </a></li></div>
+                                <div class="row"><li><a href="#">
+                                    <div class="bluedot"></div>Option 4
+                                </a></li></div>
                             </ul>
                         </div>
-                        <a style="display: grid; grid: center;" href="#">Enviar</a>
+                        <div id="buttons">
+                            <a href="#" class="btn green">dance</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -83,4 +206,21 @@
     </div>
     {% include 'footer.html' %}
 </body>
+<script>
+// Add click event listener to all .bluedot elements
+document.querySelectorAll('.bluedot').forEach(function(blueDot) {
+    blueDot.addEventListener('click', function() {
+        this.classList.toggle('clicked');
+    });
+});
+// Remove clicked class from all .bluedot elements when user clicks elsewhere
+document.addEventListener('click', function(event) {
+  document.querySelectorAll('.bluedot.clicked').forEach(function(blueDot) {
+    if (event.target !== blueDot) {
+      blueDot.classList.remove('clicked');
+    }
+  });
+});
+
+</script>
 </html>

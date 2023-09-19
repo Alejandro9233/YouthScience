@@ -24,7 +24,6 @@
         margin-left: 1em;
         position: relative;
     }
-
     .row li:before {
         content: "";
         position: absolute;
@@ -37,8 +36,16 @@
         transform: rotate(45deg);
     }
     .row li a:hover {
-        color: #00ffea62;
+        color: #ff0000;
     }
+    .row li a:active {
+        color: #f700ff;
+    }
+    .row li a:focus {
+        outline: none;
+        color: #ff0000;
+    }
+
   
 </style>
 <body style="background-color: #ffffff;">

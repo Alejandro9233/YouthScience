@@ -84,21 +84,29 @@
         color: #ff0000;
     }
     .row li a:hover .bluedot {
+        background-color: transparent;
+        border-color: #ff0000;
+    }
+    .row li a:hover .bluedot_circle {
         background-color: #ff0000;
-        border-color: transparent;
     }
     .row li a:focus{
         outline: none;
         color: #ff0000;
     }
     .row li a:focus .bluedot{
+        border-color: #ff0000;
+    }
+    .row li a:focus .bluedot_circle{
         background-color: #ff0000;
-        border-color: transparent;
     }
     .row li a:active{
         color: #f700ff;
     }
     .row li a:active .bluedot {
+        border-color: #f700ff;
+    }
+    .row li a:active .bluedot_circle {
         background-color: #f700ff;
     }
     .bluedot{
@@ -110,6 +118,14 @@
         height: 40px;
         display: inline-block;
         transition: all 0.4s ease-in-out;
+    }
+    .bluedot_circle {
+        margin-left: 7.5%;
+        margin-top: 7.5%;
+        border-radius: 100%;
+        width: 85%;
+        height: 85%;
+        transition: all 0.3s ease-in-out;
     }
     #sendButton {
         border: solid 1px #ff0000;
@@ -188,19 +204,19 @@
                     </div>
                     <div class="space" style="width: 50%;">
                         <h1 class="space" style="text-align: center;">Pregunta...</h1>
-                        <div class="space" style="width: 100%; margin: 15% 0 0 15%;">
+                        <div class="space" style="width: 80%; margin: 15% 0 0 15%;">
                             <ul class="space" style="width: 100%;">
                                 <div class="row" style="margin-bottom: 4%;"><li><a href="#" class="space" style="font-size: xx-large; margin-bottom: 50px;">
-                                    <div class="bluedot"></div>Option 1
+                                    <div class="bluedot"><div class="bluedot_circle"></div></div>Option 1
                                 </a></li></div>
                                 <div class="row" style="margin-bottom: 4%;"><li><a href="#" class="space" style="font-size: xx-large; margin-bottom: 50px;">
-                                    <div class="bluedot"></div>Option 2
+                                    <div class="bluedot"><div class="bluedot_circle"></div></div>Option 2
                                 </a></li></div>
                                 <div class="row" style="margin-bottom: 4%;"><li><a href="#" class="space" style="font-size: xx-large; margin-bottom: 50px;">
-                                    <div class="bluedot"></div>Option 3
+                                    <div class="bluedot"><div class="bluedot_circle"></div></div>Option 3
                                 </a></li></div>
                                 <div class="row" style="margin-bottom: 4%;"><li><a href="#" class="space" style="font-size: xx-large; margin-bottom: 50px;">
-                                    <div class="bluedot"></div>Option 4
+                                    <div class="bluedot"><div class="bluedot_circle"></div></div>Option 4
                                 </a></li></div>
                             </ul>
                         </div>
